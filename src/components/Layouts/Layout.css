@@ -1,0 +1,24 @@
+.pad-below-20 {
+	padding-bottom: 20px;
+}
+
+.pad-above-10 {
+	padding-top: 10px;
+}
+
+.pad-above-5 {
+	padding-top: 5px;
+}
+
+.max-25-vh {
+	max-width: 25vh;
+}
+
+.max-1000-px {
+	max-width: 1000px;
+	margin: auto;
+}
+
+#AboutMe {
+	padding-bottom: 10px;
+}

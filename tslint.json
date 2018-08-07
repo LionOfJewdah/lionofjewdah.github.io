@@ -1,29 +1,40 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-        "interface-name": [
-            true,
-            "never-prefix"
-        ],
-        "indent": [
-            true,
-            "tabs"
-        ],
-        "semicolon": [
-            true,
-            "always",
-            "ignore-bound-class-methods"
-        ],
-        "trailing-comma": [
-            true,
-            {
-                "multiline": "never"
-            }
-        ]
-    },
-    "rulesDirectory": []
+	"extends": [
+		"tslint:recommended",
+		"tslint-react",
+		"tslint-config-prettier"
+	],
+	"linterOptions": {
+		"exclude": [
+			"config/**/*.js",
+			"node_modules/**/*.ts",
+			"coverage/lcov-report/*.js"
+		]
+	},
+	"rules": {
+		"interface-name": [
+			true,
+			"never-prefix"
+		],
+		"indent": [
+			true,
+			"tabs"
+		],
+		"semicolon": [
+			true,
+			"always",
+			"ignore-bound-class-methods"
+		],
+		"trailing-comma": [
+			true,
+			{
+				"multiline": "never"
+			}
+		],
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-snake-case"
+		]
+	}
 }

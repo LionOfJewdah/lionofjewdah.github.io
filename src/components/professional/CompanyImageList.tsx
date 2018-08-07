@@ -1,11 +1,17 @@
 import * as React from "react";
 import { CompanyImage, CompanyProps } from "./CompanyImage";
 
-export class CompanyImageList extends React.Component<CompanyProps[], {}> {
+export interface CompanyImages {
+	companies: CompanyProps[];
+	className: string;
+}
+
+export class CompanyImageList extends React.Component<CompanyImages, {}> {
 	public render() {
-		return <section id="companies">
-			{this.props.map(
-				(company) => new CompanyImage(company)
+		return <section id="companies" className={this.props.className}>
+			{this.props.companies.map(
+				(company) =>
+					<CompanyImage name={company.name} logo={company.logo} key={company.name} />
 			)}
 		</section>;
 	}

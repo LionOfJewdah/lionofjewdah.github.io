@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../App.css";
+import "./companies.css";
 
 export interface CompanyProps {
 	name: string;
@@ -9,7 +9,7 @@ export interface CompanyProps {
 export class CompanyImage extends React.Component<CompanyProps, {}> {
 	public render() {
 		return <div className="company-image">
-			<img className="small-image" src={"static/img/" + this.props.logo} alt={this.props.name} />
+			<img className="small-image" src={"images/" + this.props.logo} alt={this.props.name} />
 			<br />
 		</div>;
 	}
