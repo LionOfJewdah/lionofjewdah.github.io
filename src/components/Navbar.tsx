@@ -1,8 +1,10 @@
 import * as React from "react";
 import "./Layouts/Layout.css";
-import "./Sidebar.css";
+import "./Navbar.css";
 
-export class Sidebar extends React.Component {
+const resume = "/documents/resume.pdf";
+
+export class Navbar extends React.Component {
 	public render() {
 		return <aside className="right-sidebar js-pinned-right-sidebar">
 			<div className="js-sticky-rightnav">
@@ -21,7 +23,7 @@ export class Sidebar extends React.Component {
 							<ol className="nav-links">
 								<li className="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Demos</li>
 								<li>
-									<a id="resume-link" href="/static/documents/resume.pdf">
+									<a id="resume-link" href={resume}>
 										Resume
 									</a>
 								</li>
@@ -53,4 +55,4 @@ export class Sidebar extends React.Component {
 	}
 }
 
-export default Sidebar;
+export default Navbar;

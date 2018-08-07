@@ -42,3 +42,8 @@ ul, ol, li {
 .nav-links {
 	list-style: none;
 }
+
+/* 
+a.linkedin ::before{
+	content: url()
+} */

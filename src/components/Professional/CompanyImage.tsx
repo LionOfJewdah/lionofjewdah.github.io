@@ -11,7 +11,7 @@ export interface CompanyProps {
 export class CompanyImage extends React.Component<CompanyProps, {}> {
 	public render() {
 		return <div className="company-image">
-			<img className="small-image with-overlay" src={"/images/" + this.props.logo}
+			<img className="small-image with-overlay" src={this.props.logo}
 				alt={this.props.name} title={this.props.title || this.props.name} />
 			<div className="image-overlay">
 				<div className="overlay-text">
