@@ -4,7 +4,7 @@ import "./Sidebar.css";
 
 export class Sidebar extends React.Component {
 	public render() {
-		return <div className="right-sidebar js-pinned-right-sidebar">
+		return <aside className="right-sidebar js-pinned-right-sidebar">
 			<div className="js-sticky-rightnav">
 				<nav role="navigation">
 					<ol className="nav-links">
@@ -16,11 +16,12 @@ export class Sidebar extends React.Component {
 								</a>
 							</li>
 						</li>
+						<br />
 						<li>
 							<ol className="nav-links">
 								<li className="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Demos</li>
 								<li>
-									<a id="resume-link" href="/documents/resume.pdf">
+									<a id="resume-link" href="/static/documents/resume.pdf">
 										Resume
 									</a>
 								</li>
@@ -36,11 +37,19 @@ export class Sidebar extends React.Component {
 								</li>
 							</ol>
 						</li>
+						<br />
+						<li id="connect-links">
+							<ol className="nav-links">
+								<li className="linkedin">
+									<a href="https://www.linkedin.com/in/david-silverstone/"
+										className="linkedin">Linkedin</a>
+								</li>
+							</ol>
+						</li>
 					</ol>
 				</nav>
-
 			</div>
-		</div>;
+		</aside>;
 	}
 }
 

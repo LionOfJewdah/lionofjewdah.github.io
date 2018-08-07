@@ -19,6 +19,11 @@
 	margin: auto;
 }
 
+.max-800-px {
+	max-width: 800px;
+	margin: auto;
+}
+
 #AboutMe {
 	padding-bottom: 10px;
 }

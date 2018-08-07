@@ -13,7 +13,7 @@ export class App extends React.Component {
 				<Sidebar />
 				<section id="content">
 					<MyHeader />
-					<AppIntro message="I worked for Microsoft this summer, but now I'm trying to get a Ph.D." />
+					<AppIntro message="Entering my last year at USC, then onto Ph.D." />
 					<PageLayout />
 				</section>
 			</main>

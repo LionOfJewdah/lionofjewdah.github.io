@@ -11,9 +11,12 @@ export class WorkExperienceSynopsis
 	extends React.Component<WorkExperienceProps, {}> {
 	public static defaultProps: Partial<WorkExperienceProps> = {
 		companies: [
-			{ logo: "Microsoft logo.png", name: "Microsoft" },
-			{ logo: "Viterbi.jpg", name: "USC Viterbi School of Engineering" },
-			{ logo: "IBM logo.png", name: "IBM" }
+			{ logo: "Microsoft logo.png", name: "Microsoft", title: "Microsoft" },
+			{
+				logo: "Viterbi.jpg", name: "USC Viterbi School of Engineering",
+				title: "Viterbi School of Engineering"
+			},
+			{ logo: "IBM logo.png", name: "IBM", title: "IBM" }
 		],
 		greeting: "Where I've worked"
 	};
@@ -23,12 +26,12 @@ export class WorkExperienceSynopsis
 			<h3>
 				{this.props.greeting}
 			</h3>
-			<CompanyImageList companies={this.props.companies} className="pad-above-5">
+			<CompanyImageList companies={this.props.companies}>
 				{this.props.companies.map(
 					(company) => new CompanyImage(company)
 				)}
 			</CompanyImageList>
-		</section>;
+		</section >;
 	}
 }
 

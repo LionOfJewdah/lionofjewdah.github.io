@@ -3,7 +3,7 @@ import { CompanyImage, CompanyProps } from "./CompanyImage";
 
 export interface CompanyImages {
 	companies: CompanyProps[];
-	className: string;
+	className?: string;
 }
 
 export class CompanyImageList extends React.Component<CompanyImages, {}> {
