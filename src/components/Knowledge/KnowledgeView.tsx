@@ -3,7 +3,17 @@ import * as React from "react";
 import SectionTitle from "../Small Components/SectionTitle";
 import { SubjectProps, SubjectView } from "./SubjectView";
 
-import artchitecture from "../../images/subjects/architecture.jpg";
+import { Grid } from "react-bootstrap";
+
+import computerArchitecture from "../../images/subjects/architecture.jpg";
+import yoloDetections from "../../images/subjects/computer vision.jpg";
+
+const theMaxwellEquations = [
+	"\\( \\nabla \\cdot \\mathbf {E} ={\\frac {\\rho }{\\varepsilon _{0}}}",
+	"\\nabla \\cdot \\mathbf {B} =0",
+	"\\nabla \\times \\mathbf {E} =-{\\frac {\\partial \\mathbf {B} }{\\partial t}}",
+	"\\nabla \\times \\mathbf {B} =\\mu _{0}\\left(\\mathbf {J} +\\varepsilon _{0}{\\frac {\\partial \\mathbf {E} }{\\partial t}}\\right) \\)"
+].join("\\\\");
 
 export interface KnowledgeProps {
 	greeting: string;
@@ -27,9 +37,24 @@ export class KnowledgeView
 			{
 				figure: {
 					latex: false,
-					resource: artchitecture
+					resource: computerArchitecture
 				},
-				name: "Computer architecture"
+				name: "Computer Architecture"
+			},
+			{
+				figure: {
+					latex: false,
+					resource: yoloDetections
+				},
+				name: "Computer Vision"
+			},
+			{
+				figure: {
+					className: "align-center",
+					latex: true,
+					resource: theMaxwellEquations
+				},
+				name: "Electricity & Magnetism"
 			}
 		]
 	};
@@ -37,10 +62,12 @@ export class KnowledgeView
 	public render(): JSX.Element {
 		return <section id="subject-knowledge">
 			<SectionTitle heading={this.props.greeting} />
-			{this.props.subjects.map((subject) =>
-				<SubjectView name={subject.name} figure={subject.figure}
-					key={subject.name} />
-			)}
+			<Grid>{
+				this.props.subjects.map((subject) =>
+					<SubjectView name={subject.name} figure={subject.figure}
+						key={subject.name} />
+				)
+			}</Grid>
 		</section>;
 	}
 }

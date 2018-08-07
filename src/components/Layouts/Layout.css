@@ -2,12 +2,48 @@
 	padding-bottom: 20px;
 }
 
+.pad-below-10 {
+	padding-bottom: 10px;
+}
+
+.pad-below-5 {
+	padding-bottom: 5px;
+}
+
+.pad-above-20 {
+	padding-top: 20px;
+}
+
 .pad-above-10 {
 	padding-top: 10px;
 }
 
 .pad-above-5 {
 	padding-top: 5px;
+}
+
+.margin-above-20 {
+	margin-top: 20px;
+}
+
+.margin-above-10 {
+	margin-top: 10px;
+}
+
+.margin-above-5 {
+	margin-top: 5px;
+}
+
+.margin-below-20 {
+	margin-bottom: 20px;
+}
+
+.margin-below-10 {
+	margin-bottom: 10px;
+}
+
+.margin-below-5 {
+	margin-bottom: 5px;
 }
 
 .max-25-vh {
@@ -26,4 +62,13 @@
 
 #AboutMe {
 	padding-bottom: 10px;
+}
+
+.serif {
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.align-center {
+	text-align: center;
+	align-content: center;
 }

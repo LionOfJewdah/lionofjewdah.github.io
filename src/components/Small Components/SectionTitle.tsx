@@ -11,7 +11,7 @@ export interface SectionTitleProps {
 export class SectionTitle extends React.Component<SectionTitleProps, {}> {
 	public render() {
 		return <h3 style={this.props.style} id={this.props.id}
-			className={this.props.className}>{
+			className={this.props.className + " serif"}>{
 				this.props.heading || this.props.children
 			}</h3>;
 	}

@@ -8,9 +8,9 @@ import WorkExperienceSynopsis from "./WorkExperienceSynposis";
 export class PageLayout extends React.Component {
 	public render() {
 		return <article id="layout" className="max-1000-px">
-			<WhoIAm />
-			<KnowledgeView />
-			<WorkExperienceSynopsis />
+			<WhoIAm /><hr />
+			<KnowledgeView /><hr />
+			<WorkExperienceSynopsis /><hr />
 		</article>;
 	}
 }
