@@ -279,7 +279,7 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
     "url": "http://localhost:3000",
     "webRoot": "${workspaceRoot}/src",
     "sourceMapPathOverrides": {
-      "webpack:///src/*": "${webRoot}/*"
+	 "webpack:///src/*": "${webRoot}/*"
     }
   }]
 }
@@ -341,8 +341,8 @@ Next we add a 'lint-staged' field to the `package.json`, for example:
   },
 + "lint-staged": {
 +   "src/**/*.{js,jsx,json,css}": [
-+     "prettier --single-quote --write",
-+     "git add"
++	"prettier --single-quote --write",
++	"git add"
 +   ]
 + },
   "scripts": {
@@ -450,19 +450,19 @@ import React, { Component } from 'react';
 class App extends Component {
   handleClick = () => {
     import('./moduleA')
-      .then(({ moduleA }) => {
-        // Use moduleA
-      })
-      .catch(err => {
-        // Handle failure
-      });
+	 .then(({ moduleA }) => {
+	   // Use moduleA
+	 })
+	 .catch(err => {
+	   // Handle failure
+	 });
   };
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleClick}>Load</button>
-      </div>
+	 <div>
+	   <button onClick={this.handleClick}>Load</button>
+	 </div>
     );
   }
 }
@@ -535,11 +535,11 @@ becomes this:
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+	 -ms-flex-direction: row;
+		flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+	 -ms-flex-align: center;
+		align-items: center;
 }
 ```
 
@@ -569,9 +569,9 @@ Then in `package.json`, add the following lines to `scripts`:
    "scripts": {
 +    "build-css": "node-sass-chokidar src/ -o src/",
 +    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
+	"start": "react-scripts start",
+	"build": "react-scripts build",
+	"test": "react-scripts test --env=jsdom",
 ```
 
 >Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
@@ -612,16 +612,16 @@ Then we can change `start` and `build` scripts to include the CSS preprocessor c
 
 ```diff
    "scripts": {
-     "build-css": "node-sass-chokidar src/ -o src/",
-     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+	"build-css": "node-sass-chokidar src/ -o src/",
+	"watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
 -    "start": "react-scripts start",
 -    "build": "react-scripts build",
 +    "start-js": "react-scripts start",
 +    "start": "npm-run-all -p watch-css start-js",
 +    "build-js": "react-scripts build",
 +    "build": "npm-run-all build-css build-js",
-     "test": "react-scripts test --env=jsdom",
-     "eject": "react-scripts eject"
+	"test": "react-scripts test --env=jsdom",
+	"eject": "react-scripts eject"
    }
 ```
 
@@ -868,10 +868,10 @@ in the environment inside a `<form>`:
 render() {
   return (
     <div>
-      <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
-      <form>
-        <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
-      </form>
+	 <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
+	 <form>
+	   <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
+	 </form>
     </div>
   );
 }
@@ -1049,8 +1049,8 @@ People often serve the front-end React app from the same host and port as their 
 For example, a production setup might look like this after the app is deployed:
 
 ```
-/             - static server returns index.html with React app
-/todos        - static server returns index.html with React app
+/		   - static server returns index.html with React app
+/todos	   - static server returns index.html with React app
 /api/todos    - server handles any /api/* requests using the backend implementation
 ```
 
@@ -1116,9 +1116,9 @@ You may also specify any configuration value [`http-proxy-middleware`](https://g
   // ...
   "proxy": {
     "/api": {
-      "target": "<url>",
-      "ws": true
-      // ...
+	 "target": "<url>",
+	 "ws": true
+	 // ...
     }
   }
   // ...
@@ -1135,28 +1135,28 @@ Matches are regular expressions, so that you can use a regexp to match multiple 
   "proxy": {
     // Matches any request starting with /api
     "/api": {
-      "target": "<url_1>",
-      "ws": true
-      // ...
+	 "target": "<url_1>",
+	 "ws": true
+	 // ...
     },
     // Matches any request starting with /foo
     "/foo": {
-      "target": "<url_2>",
-      "ssl": true,
-      "pathRewrite": {
-        "^/foo": "/foo/beta"
-      }
-      // ...
+	 "target": "<url_2>",
+	 "ssl": true,
+	 "pathRewrite": {
+	   "^/foo": "/foo/beta"
+	 }
+	 // ...
     },
     // Matches /bar/abc.html but not /bar/sub/def.html
     "/bar/[^/]*[.]html": {
-      "target": "<url_3>",
-      // ...
+	 "target": "<url_3>",
+	 // ...
     },
     // Matches /baz/abc.html and /baz/sub/def.html
     "/baz/.*/.*[.]html": {
-      "target": "<url_4>"
-      // ...
+	 "target": "<url_4>"
+	 // ...
     }
   }
   // ...
@@ -1180,13 +1180,13 @@ Either way, you can proxy WebSocket requests manually in `package.json`:
   // ...
   "proxy": {
     "/socket": {
-      // Your compatible WebSocket server
-      "target": "ws://<socket_url>",
-      // Tell http-proxy-middleware that this is a WebSocket proxy.
-      // Also allows you to proxy WebSocket requests without an additional HTTP request
-      // https://github.com/chimurai/http-proxy-middleware#external-websocket-upgrade
-      "ws": true
-      // ...
+	 // Your compatible WebSocket server
+	 "target": "ws://<socket_url>",
+	 // Tell http-proxy-middleware that this is a WebSocket proxy.
+	 // Also allows you to proxy WebSocket requests without an additional HTTP request
+	 // https://github.com/chimurai/http-proxy-middleware#external-websocket-upgrade
+	 "ws": true
+	 // ...
     }
   }
   // ...
@@ -1258,7 +1258,7 @@ Similarly to the previous section, you can leave some placeholders in the HTML t
 <html lang="en">
   <head>
     <script>
-      window.SERVER_DATA = __SERVER_DATA__;
+	 window.SERVER_DATA = __SERVER_DATA__;
     </script>
 ```
 
@@ -1499,17 +1499,17 @@ Example package.json:
   "name": "your-package",
   "jest": {
     "collectCoverageFrom" : [
-      "src/**/*.{js,jsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
+	 "src/**/*.{js,jsx}",
+	 "!<rootDir>/node_modules/",
+	 "!<rootDir>/path/to/dir/"
     ],
     "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
+	 "global": {
+	   "branches": 90,
+	   "functions": 90,
+	   "lines": 90,
+	   "statements": 90
+	 }
     },
     "coverageReporters": ["text"],
     "snapshotSerializers": ["my-serializer-module"]
@@ -1672,20 +1672,20 @@ Use the following [`launch.json`](https://code.visualstudio.com/docs/editor/debu
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug CRA Tests",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
-      "args": [
-        "test",
-        "--runInBand",
-        "--no-cache",
-        "--env=jsdom"
-      ],
-      "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
+	 "name": "Debug CRA Tests",
+	 "type": "node",
+	 "request": "launch",
+	 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",	 
+	 "args": [
+	   "test",
+	   "--runInBand",
+	   "--no-cache",
+	   "--env=jsdom"
+	 ],
+	 "cwd": "${workspaceRoot}",
+	 "protocol": "inspector",
+	 "console": "integratedTerminal",
+	 "internalConsoleOptions": "neverOpen"
     }
   ]
 }
@@ -1755,7 +1755,7 @@ Then, add these scripts to your `package.json`:
    "scripts": {
 +    "styleguide": "styleguidist server",
 +    "styleguide:build": "styleguidist build",
-     "start": "react-scripts start",
+	"start": "react-scripts start",
 ```
 
 Then, run the following command inside your app’s directory:
@@ -1905,9 +1905,9 @@ Then in `package.json`, add the following line to `scripts`:
 ```diff
    "scripts": {
 +    "analyze": "source-map-explorer build/static/js/main.*",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
+	"start": "react-scripts start",
+	"build": "react-scripts build",
+	"test": "react-scripts test --env=jsdom",
 ```
 
 Then to analyze the bundle run the production build then run the analyze
@@ -2096,7 +2096,7 @@ IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` f
   "hosting": {
     ...
     "headers": [
-      {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
+	 {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
     ]
     ...
 ```
@@ -2109,7 +2109,7 @@ Now, after you create a production build with `npm run build`, you can deploy it
     i  deploying database, hosting
     ✔  database: rules ready to deploy.
     i  hosting: preparing build directory for upload...
-    Uploading: [==============================          ] 75%✔  hosting: build folder uploaded successfully
+    Uploading: [==============================		] 75%✔  hosting: build folder uploaded successfully
     ✔  hosting: 8 files uploaded successfully
     i  starting release process (may take several minutes)...
 
@@ -2318,7 +2318,7 @@ Install the Surge CLI if you haven’t already by running `npm install -g surge`
 When asked about the project path, make sure to specify the `build` folder, for example:
 
 ```sh
-       project path: /path/to/project/build
+	  project path: /path/to/project/build
 ```
 
 Note that in order to support routers that use HTML5 `pushState` API, you may want to rename the `index.html` in your build folder to `200.html` before deploying to Surge. This [ensures that every URL falls back to that file](https://surge.sh/help/adding-a-200-page-for-client-side-routing).

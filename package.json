@@ -25,6 +25,7 @@
     "awesome-typescript-loader": "^5.2.0",
     "eslint": "^5.3.0",
     "eslint-plugin-react": "^7.10.0",
+    "react-scripts-ts": "^2.17.0",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"

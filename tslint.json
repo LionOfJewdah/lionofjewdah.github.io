@@ -8,6 +8,21 @@
         "interface-name": [
             true,
             "never-prefix"
+        ],
+        "indent": [
+            true,
+            "tabs"
+        ],
+        "semicolon": [
+            true,
+            "always",
+            "ignore-bound-class-methods"
+        ],
+        "trailing-comma": [
+            true,
+            {
+                "multiline": "never"
+            }
         ]
     },
     "rulesDirectory": []
