@@ -11,7 +11,8 @@ export class CompanyImageList extends React.Component<CompanyImages, {}> {
 		return <section id="companies" className={this.props.className}>
 			{this.props.companies.map(
 				(company) =>
-					<CompanyImage name={company.name} logo={company.logo} key={company.name} />
+					<CompanyImage name={company.name} logo={company.logo} key={company.name}
+						overlayText={company.overlayText} title={company.title} />
 			)}
 		</section>;
 	}
