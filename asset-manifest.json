@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.09c94188.css",
   "main.css.map": "static/css/main.09c94188.css.map",
-  "main.js": "static/js/main.44781530.js",
-  "main.js.map": "static/js/main.44781530.js.map",
+  "main.js": "static/js/main.1f436a36.js",
+  "main.js.map": "static/js/main.1f436a36.js.map",
   "static/media/Microsoft logo.png": "static/media/Microsoft logo.e9ec7efe.png",
   "static/media/Viterbi.jpg": "static/media/Viterbi.9bf2b17b.jpg",
   "static/media/architecture.jpg": "static/media/architecture.377885b5.jpg",
@@ -14,5 +14,6 @@
   "static/media/glyphicons-halflings-regular.woff": "static/media/glyphicons-halflings-regular.fa277232.woff",
   "static/media/glyphicons-halflings-regular.woff2": "static/media/glyphicons-halflings-regular.448c34a5.woff2",
   "static/media/me 300.jpg": "static/media/me 300.4df8a822.jpg",
-  "static/media/reorg time.png": "static/media/reorg time.6aec0e42.png"
+  "static/media/reorg time.png": "static/media/reorg time.6aec0e42.png",
+  "static/media/resume.pdf": "static/media/resume.c781424c.pdf"
 }
