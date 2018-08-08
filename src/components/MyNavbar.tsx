@@ -3,6 +3,17 @@ import * as React from "react";
 import { MenuItem, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
 
 const resume = "/documents/resume.pdf";
+const linkedinProfile = "https://www.linkedin.com/in/david-silverstone/";
+
+function goToResume(): void {
+	openInNewTab(resume);
+}
+
+function openInNewTab(url: string): void {
+	const win = window.open(url, '_blank');
+	if (win) { win.focus(); }
+}
+
 
 export class MyNavbar extends React.Component {
 	public render() {
@@ -16,11 +27,13 @@ export class MyNavbar extends React.Component {
 			</Navbar.Header >
 			<Navbar.Collapse>
 				<Nav>
-					<NavItem href="https://www.linkedin.com/in/david-silverstone/"
-						eventKey={1} className="linkedin">
+					<NavItem eventKey={1} href={linkedinProfile} className="linkedin">
 						LinkedIn
 					</NavItem>
-					<NavItem eventKey={2} href={resume}>
+					<NavItem eventKey={2}
+						onClick={goToResume}
+					// href={resume}
+					>
 						Resume
 					</NavItem>
 					<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
