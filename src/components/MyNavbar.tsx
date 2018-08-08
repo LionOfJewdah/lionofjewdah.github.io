@@ -1,9 +1,10 @@
 import * as React from "react";
-
 import { MenuItem, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
 
-const resume = "/documents/resume.pdf";
+import resume from "../documents/resume.pdf";
+
 const linkedinProfile = "https://www.linkedin.com/in/david-silverstone/";
+const githubProfile = "https://github.com/LionOfJewdah";
 
 export class MyNavbar extends React.Component {
 	public render() {
@@ -35,8 +36,8 @@ export class MyNavbar extends React.Component {
 					<NavItem eventKey={1} href="#">
 						Link Right
 					</NavItem>
-					<NavItem eventKey={2} href="#">
-						Link Right
+					<NavItem eventKey={2} href={githubProfile} className="github">
+						My GitHub
 					</NavItem>
 				</Nav>
 			</Navbar.Collapse>
