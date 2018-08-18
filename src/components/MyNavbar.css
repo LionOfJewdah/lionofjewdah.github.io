@@ -1,0 +1,9 @@
+.icon-then-link {
+	max-height: 100%;
+}
+
+.icon-then-link img {
+	width: auto;
+	height: 1em;
+	vertical-align: middle;
+}

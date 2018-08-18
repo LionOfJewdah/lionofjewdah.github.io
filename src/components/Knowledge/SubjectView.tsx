@@ -13,7 +13,7 @@ export interface SubjectProps {
 export class SubjectView extends React.Component<SubjectProps, {}> {
 	public render() {
 		return <Row className="subject-row">
-			<Col xs={6} md={4} className="subject-name">
+			<Col xs={6} md={4} className="subject-name serif">
 				{this.props.name}
 			</Col>
 			<Col xs={6} md={4}>

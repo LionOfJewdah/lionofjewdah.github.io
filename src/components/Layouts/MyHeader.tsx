@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./MyHeader.css";
 
-import headerLogo from "../../images/reorg time.png";
+import headerLogo from "../../images/me on hike.jpg";
 
 export class MyHeader extends React.Component {
 	public render() {
