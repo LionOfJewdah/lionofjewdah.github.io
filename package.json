@@ -1,12 +1,11 @@
 {
   "name": "dsilv.io",
-  "version": "0.1.0",
+  "version": "0.6.9",
   "private": true,
   "homepage": "https://dsilv.io/",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "less": "^3.8.0",
-    "office-ui-fabric-react": "^6.46.0",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.2",
